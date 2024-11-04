@@ -553,7 +553,7 @@
 553 fBodyBodyGyroJerkMag-skewness()
 554 fBodyBodyGyroJerkMag-kurtosis()
 555 angle(tBodyAccMean,gravity)
-556 angle(tBodyAccJerkMean),gravityMean)
+556 angle(tBodyAccJerkMean,gravityMean)
 557 angle(tBodyGyroMean,gravityMean)
 558 angle(tBodyGyroJerkMean,gravityMean)
 559 angle(X,gravityMean)
