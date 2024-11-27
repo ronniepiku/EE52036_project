@@ -74,12 +74,14 @@ if __name__ == "__main__":
     }
 
     subject_number = 1
-    subject_df =  pd.read_csv('UCI HAR Dataset/UCI HAR Dataset/train/subject_train.txt', sep='\s+', header=None)
+    data_idx = 1
+
+    subject_df = pd.read_csv('UCI HAR Dataset/UCI HAR Dataset/train/subject_train.txt', sep='\s+', header=None)
     subject_idx = subject_df.index[subject_df[0] == subject_number].tolist()
 
-    input_data = pd.read_csv('UCI HAR Dataset/UCI HAR Dataset/train/X_train.txt', sep='\s+', header=None)
-    input_data = input_data.iloc[subject_idx].values
 
-    # Predict the activity
-    activity = preprocess_and_predict(input_data, label_mapping)
+    input_data = pd.read_csv('UCI HAR Dataset/UCI HAR Dataset/train/X_train.txt', sep='\s+', header=None)
+    input_row = input_data.iloc[subject_idx[data_idx]]
+
+    activity = preprocess_and_predict(input_row.values.reshape(1, -1), label_mapping)
     print(f"Predicted Activity: {activity}")
