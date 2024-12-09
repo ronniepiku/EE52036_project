@@ -58,7 +58,7 @@ def preprocess_and_predict(input_data, label_mapping):
     predicted_class = np.argmax(predictions, axis=1)[0]
 
     # Map the predicted class index to the activity label
-    predicted_activity = label_mapping[predicted_class]
+    predicted_activity = label_mapping[predicted_class + 1]
 
     return predicted_activity
 
